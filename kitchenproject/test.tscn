@@ -7,3 +7,4 @@ position = Vector2(0, 3)
 metadata/_edit_vertical_guides_ = [-74.0]
 
 [node name="Player" parent="." instance=ExtResource("1_37kl0")]
+position = Vector2(8, 27)

@@ -1,6 +1,7 @@
 using Godot;
 
 using System;
+using System.Data;
 using System.Reflection.Metadata;
 using System.Runtime.Serialization;
 
@@ -12,6 +13,7 @@ public partial class Player : CharacterBody2D
     {
         
         Vector2 inputDirection = Vector2.Zero;
+
 
         if (Input.IsActionPressed("up"))
         {

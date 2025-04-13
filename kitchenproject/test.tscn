@@ -1,10 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://leapgjnvi45l"]
+[gd_scene load_steps=3 format=3 uid="uid://leapgjnvi45l"]
 
-[ext_resource type="PackedScene" uid="uid://6vdfjsunjbyp" path="res://player.tscn" id="1_37kl0"]
+[ext_resource type="PackedScene" uid="uid://6vdfjsunjbyp" path="res://Player/player.tscn" id="1_37kl0"]
+[ext_resource type="PackedScene" uid="uid://cbab2kienbdjf" path="res://TestWorld/TestWorld.tscn" id="2_8uh7m"]
 
 [node name="Test" type="Node2D"]
-position = Vector2(0, 3)
 metadata/_edit_vertical_guides_ = [-74.0]
 
 [node name="Player" parent="." instance=ExtResource("1_37kl0")]
 position = Vector2(8, 27)
+
+[node name="TestWorld" parent="." instance=ExtResource("2_8uh7m")]
+z_index = -1

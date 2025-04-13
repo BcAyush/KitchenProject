@@ -1,6 +1,7 @@
 using Godot;
 
 using System;
+using System.Collections;
 using System.Data;
 using System.Reflection.Metadata;
 using System.Reflection.Metadata.Ecma335;
@@ -9,7 +10,7 @@ using System.Runtime.Serialization;
 public partial class Player : CharacterBody2D
 {
     //initializes variables
-    [Export] public int move_speed = 75;
+    [Export] public int move_speed = 100;
     private AnimationTree _animTree;
     private AnimationNodeStateMachinePlayback _stateMachine;
 
@@ -42,11 +43,10 @@ public partial class Player : CharacterBody2D
             inputDirection.X += 1;
         }
 
-        //inputDirection = inputDirection.Normalized();
-
-
 
         Velocity = inputDirection * move_speed;
+
+        //if button is pressed, change state to walk an pass input value to animation tree
         if(inputDirection != Vector2.Zero)
         {
             _stateMachine.Travel("Walk");

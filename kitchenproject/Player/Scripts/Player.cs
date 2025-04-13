@@ -33,38 +33,20 @@ public partial class Player : CharacterBody2D
         {
             inputDirection.Y -= 1;
         }
-        else if (Input.IsActionPressed("down")){
+        if (Input.IsActionPressed("down")){
             inputDirection.Y += 1;
         }
-        else if (Input.IsActionPressed("left")){
+        if (Input.IsActionPressed("left")){
             inputDirection.X -= 1;
         }
-        else if (Input.IsActionPressed("right")){
+        if (Input.IsActionPressed("right")){
             inputDirection.X += 1;
         }
 
-        //inputDirection = inputDirection.Normalized();
-
-        // switch((Input.IsActionPressed("up"), Input.IsActionPressed("down"), Input.IsActionPressed("left"), Input.IsActionPressed("right")))
-        // {
-        //     case(true, false, false, false):
-        //         inputDirection.Y -= 1;
-        //         break;
-        //     case(false, true, false, false):
-        //         inputDirection.Y += 1;
-        //         break;
-        //     case(false, false, true, false):
-        //         inputDirection.X -= 1;
-        //         break;
-        //     case(false, false, false, true):
-        //         inputDirection.X += 1;
-        //         break;
-
-        // }
-
-
 
         Velocity = inputDirection * move_speed;
+
+        //if button is pressed, change state to walk an pass input value to animation tree
         if(inputDirection != Vector2.Zero)
         {
             _stateMachine.Travel("Walk");
